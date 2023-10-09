@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -13,8 +13,20 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        popIn: {
+          '0%': { transform: 'scale(80%)', opacity: '0%' },
+          '75%': { transform: 'scale(105%)', opacity: '100%'},
+          '100%': { transform: 'scale(100%)', opacity: '100%' },
+        },
+        popOut: {
+          'from': { transform: 'scale(100%)', opacity: '100%' },
+          '40%': { transform: 'scale(110%)', opacity: '100%' },
+          'to': {transform: 'scale(80%)', opacity: '0%'}
+        }
+      },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
